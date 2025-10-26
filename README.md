@@ -34,13 +34,17 @@ This program will allows user to add, view, and edit schedule while automaticall
 </ul>
 
 <h3>2. When adding a new schedule:</h3>
+<ul>
 <li>User inputs course name, day, and start/end times</li>
 <li>Program checks for time conflicts</li>
 <li>If no conflicts, schedule is added to the list</li>
+</ul>
 
 <h3>3. When editing:</h3>
+<ul>
 <li>User selects which schedule to edit</li>
 <li>Updates course name, day, and times</li>
+</ul>
 
 <h2>How To Run</h2>
 <ul>
