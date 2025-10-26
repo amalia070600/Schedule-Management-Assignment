@@ -1,10 +1,21 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Main class for the Schedule Management System.
+ * <p>
+ * Provides a simple menu-based interface to add, view, and edit class schedules.
+ * Prevents overlapping schedules on the same day.
+ */
 public class MainApp {
     private static final ArrayList<Schedule> schedules = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Entry point of the program. Displays the main menu and handles user choices.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         int choice;
         do {
@@ -26,6 +37,10 @@ public class MainApp {
         } while (choice != 4);
     }
 
+    /**
+     * Displays the menu to add a new schedule, reads user input,
+     * and calls the {@link #addSchedule(ScheduleInfo)} method.
+     */
     private static void addScheduleMenu() {
         try {
             System.out.print("Course name: ");
@@ -47,6 +62,11 @@ public class MainApp {
         }
     }
 
+    /**
+     * Adds a new schedule to the list after checking for time conflicts.
+     *
+     * @param info ScheduleInfo object containing schedule details
+     */
     private static void addSchedule(ScheduleInfo info) {
         Schedule newSchedule = new Schedule(
                 info.getCourseName(),
@@ -69,6 +89,9 @@ public class MainApp {
         System.out.println("Schedule successfully added");
     }
 
+    /**
+     * Displays all existing schedules in the list.
+     */
     private static void viewSchedules() {
         if (schedules.isEmpty()) {
             System.out.println("No schedules found.");
@@ -80,6 +103,10 @@ public class MainApp {
         }
     }
 
+    /**
+     * Displays all schedules, allows the user to select one,
+     * and edit its details.
+     */
     private static void editScheduleMenu() {
         viewSchedules();
         if (schedules.isEmpty()) return;
