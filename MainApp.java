@@ -23,7 +23,8 @@ public class MainApp {
             System.out.println("1. Add Schedule");
             System.out.println("2. View All Schedules");
             System.out.println("3. Edit Schedule");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete Schedule"); //add delete features
+            System.out.println("5. Exit");
             System.out.print("Choose option: ");
             choice = Integer.parseInt(scanner.nextLine());
 
@@ -31,7 +32,8 @@ public class MainApp {
                 case 1 -> addScheduleMenu();
                 case 2 -> viewSchedules();
                 case 3 -> editScheduleMenu();
-                case 4 -> System.out.println("Exiting program");
+                case 4 -> deleteSchedule(); //add new features
+                case 5 -> System.out.println("Exiting program");
                 default -> System.out.println("Invalid option");
             }
         } while (choice != 4);
@@ -145,5 +147,20 @@ public class MainApp {
         } catch (Exception e) {
             System.out.println("Error editing schedule: " + e.getMessage());
         }
+    }
+
+    private static void deleteSchedule(){
+        viewSchedules();
+        if(schedules.isEmpty())return;
+
+        System.out.println("Enter index to delete schedule: ");
+        int index = Integer.parseInt((scanner.nextLine()));
+
+        if(index < 0 || index >= schedules.size()){
+            System.out.println("Invalid Input");
+            return;
+        }
+        Schedule removed = schedules.remove(index);
+        System.out.println("Schedule deleted successfully");
     }
 }
