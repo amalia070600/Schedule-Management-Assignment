@@ -55,5 +55,3 @@ This program will allows user to add, view, and edit schedule while automaticall
 
 
 <p>Amalia Sanyoto || Informatics Engineering - University of Muhammadiyah Malang</p>
-
-
